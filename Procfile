@@ -1,1 +1,1 @@
-web: gunicorn mytextbord.wsgi
+web: gunicorn mytextbord.wsgi --log-file -
