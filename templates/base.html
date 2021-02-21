@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--     Fonts and icons     -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<!-- Nucleo Icons -->
+<link href="{% static '/css/nucleo-icons.css' %}" rel="stylesheet" />
+<link href="{% static '/css/nucleo-svg.css' %}" rel="stylesheet" />
+<!-- Font Awesome Icons -->
+<link href="{% static '/css/font-awesome.css' %}" rel="stylesheet" />
+<link href="{% static '/css/nucleo-svg.css' %}" rel="stylesheet" />
+<!-- CSS Files -->
+<link href="{% static '/css/argon-design-system.css' %}" rel="stylesheet" />
+
+  
+  {% block style %}
+  {% endblock style %}
+</head>
+<body>
+    <header class="header-5">
+        <nav class="navbar navbar-expand-lg navbar-absolute bg-dark">
+          <div class="container">
+            <div class="navbar-translate">
+              <a class="navbar-brand" href="javascript:;">Creative Tim</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-header-6" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="example-header-6">
+              <div class="navbar-collapse-header">
+                <div class="row">
+                  <div class="col-6 collapse-brand">
+                    <a>
+                      Argon <span> PRO </span>
+                    </a>
+                  </div>
+                  
+                  
+                  <div class="col-6 collapse-close text-right">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#example-header-6" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:;">
+                    About Us
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:;">
+                    Products
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:;">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                  <a class="btn btn-primary btn-round" href="{% url 'login' %}">LogIn
+                    
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-primary btn-round" href="{% url 'signup' %}">SignUp</a>
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+        
+        
+</body>
+
+<!--   Core JS Files   -->
+<script src="{% static '/js/core/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static '/js/core/popper.min.js' %}" type="text/javascript"></script>
+<script src="{% static '/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static '/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="{% static '/js/plugins/bootstrap-switch.js' %}"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{% static '/js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+<!--  Plugin for the Carousel, full documentation here: http://jedrzejchalubek.com/ -->
+<script src="{% static '/js/plugins/glide.js' %}" type="text/javascript"></script>
+<!--  Plugin for the DatePicker, full documentation here: https://flatpickr.js.org/ -->
+<script src="{% static '/js/plugins/moment.min.js' %}"></script>
+<!--	Plugin for Select, full documentation here: https://joshuajohnson.co.uk/Choices/ -->
+<script src="{% static '/js/plugins/choices.min.js' %}" type="text/javascript"></script>
+<!--  Plugin for the DateTimePicker, full documentation here: https://flatpickr.js.org/ -->
+<script src="{% static '/js/plugins/datetimepicker.js' %}" type="text/javascript"></script>
+<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="{% static '/js/plugins/jasny-bootstrap.min.js' %}"></script>
+<!-- Plugin for Headrom, full documentation here: https://wicky.nillia.ms/headroom.js/ -->
+<script src="{% static '/js/plugins/headroom.min.js' %}"></script>
+<!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script src="{ static '/js/argon-design-system.min.js' %}" type="text/javascript"></script>
+
+<script>
+  // Carousel
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    focusAt: 2,
+    perTouch: 1,
+    perView: 4
+  }).mount();
+
+
+  // Testimonial Carousel
+  new Glide('.testimonial-glide', {
+    type: 'carousel',
+    startAt: 0,
+    focusAt: 2,
+    perTouch: 1,
+    perView: 4
+  }).mount();
+
+  ArgonKit.initGoogleMaps();
+  ArgonKit.initGoogleMaps2();
+</script>
+<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<script>
+  window.TrackJS &&
+    TrackJS.install({
+      token: "ee6fab19c5a04ac1a32a645abde4613a",
+      application: "argon-design-system-pro"
+    });
+</script>
+{% block script %}
+{% endblock script %}
+</html>
+
+

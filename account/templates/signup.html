@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container p-5">
+    <div class="col-lg-4 mx-auto mt-4">
+      <h3 class="alert alert-light border text-center">Create An Account</h3>
+      {% for message in messages %}
+      <p class="" id="messages">{{message}}</p>
+      {% endfor %}
+      <form class="mt-1" action="{% url 'signup' %}" method="POST">{% csrf_token %}
+        <p>
+          <label for="exampleFormControlInput1" class="form-label">First Name</label>
+          <input class="form-control" name="firstname" type="text" placeholder="" aria-label="default input example">
+        </p>
+        <p>
+            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+            <input class="form-control" name="lastname" type="text" placeholder="" aria-label="default input example">
+          </p>
+        <p>
+          <label for="exampleFormControlInput1" class="form-label">User name</label>
+          <input class="form-control" name="username" type="text" placeholder="" aria-label="default input example">
+        </p>
+        <p>
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input class="form-control" type="email" placeholder="" name="email" aria-label="default input example">
+        </p>
+        <p>
+          <label for="exampleFormControlInput1" class="form-label">Password</label>
+          <input class="form-control" type="password" placeholder="" aria-label="default input example" name="password">
+        </p>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Sign Up</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+
+          
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="padding-top: 100px;">
+    <div class="row pt-5">
+        <div class="col-md-5 card   ">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Form 16</h3>
+                <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis non dolore est fuga nobis ipsum illum eligendi nemo iure repellat, soluta, optio minus ut reiciendis voluptates enim impedit veritatis officiis.</p>
+                <a href="{% url 'form16' %}" class="btn btn-primary">Upload Form 16</a>
+              </div>  
+        </div>
+          
+        <div class="col-md-6 card ml-5">
+            <div class="card-body">
+                <h3 class="card-title mb-3">Without Form 16</h3>
+                <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis non dolore est fuga nobis ipsum illum eligendi nemo iure repellat, soluta, optio minus ut reiciendis voluptates enim impedit veritatis officiis.</p>
+                <a href="{% url 'manual' %}" class="btn btn-primary">Continue Here</a>
+              </div>  
+        </div>
+          
+    </div>
+</div>
+
+  {% endblock content %}
