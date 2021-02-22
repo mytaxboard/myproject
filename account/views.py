@@ -63,7 +63,12 @@ def login(request):
             context = {'form':form}
             return render(request,'login.html', context=context)
 
-
+def profile(request, username):
+    user = User.objects.get(username=username)
+    param = {
+        'user':user
+    }
+    return render(request, 'profile.html',param)
 
 def dashboard(request):
     return render(request,'dashboard.html')
@@ -82,4 +87,4 @@ def form16(request):
 
 def signout(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')

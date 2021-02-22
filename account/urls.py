@@ -9,4 +9,5 @@ urlpatterns = [
     path('registration', views.registration, name='registration'),
     path('manual', views.manual, name='manual'),
     path('form16', views.form16, name='form16'),
+    path('<str:username>', views.profile, name='profile'),
 ]

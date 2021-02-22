@@ -26,7 +26,7 @@ SECRET_KEY = '0iz2o!(=4v8yxvzbrxnrx1o%f!oxc+k3aiu4*l%fxtvvai_rk9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mytaxboard-app.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['mytaxboard-app.herokuapp.com','localhost','*']
 
 
 # Application definition
@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'mytextbord.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mytaxboard',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
