@@ -14,13 +14,11 @@ def signup(request):
 
     else:
         if request.method == 'POST':
-            firstname = request.POST.get('firstname')
-            lastname = request.POST.get('lastname')
             email = request.POST.get('email')
             username = request.POST.get('username')
             password = request.POST.get('password')
             # try:
-            user = User.objects.create_user(first_name=firstname, last_name=lastname, email=email, username=username, password=password)
+            user = User.objects.create_user(email=email, username=username, password=password)
             user.save()
             return redirect('registration')
             # except:
