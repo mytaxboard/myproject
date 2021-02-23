@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm , User
 from django.contrib.auth import authenticate, login as loginUser, logout
 from django.contrib import messages
+from . models import ManualForm16
 # Create your views here.
 
  
@@ -75,7 +76,18 @@ def registration(request):
     return render(request,'registration.html')   
 
 def manual(request):
-    return render(request,'manual.html')   
+    if request.method == 'POST':
+        pan_number = request.POST.get('pan_number')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        date_of_birth = request.POST.get('date_of_birth')
+        manualform16 = ManualForm16(pan_number=pan_number,first_name=first_name,last_name=last_name,email=email,phone_number=phone_number,date_of_birth=date_of_birth)
+        manualform16.save()
+        return HttpResponse('you data is save!!')
+    else:
+        return render(request,'manual.html')   
 
 def form16(request):
     return render(request,'form16.html')   
