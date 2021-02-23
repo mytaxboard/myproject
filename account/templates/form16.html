@@ -5,17 +5,21 @@
 
 <div class="container" style="padding-top: 150px;">
     <div class="row">
-        <div class="card">
+        <div class="card ">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-0">File browser</h3>
+              <h3 class="mb-0">Upload File</h3>
             </div>
             <!-- Card body -->
             <div class="card-body">
-              <form>
+              <form method="POST" enctype="multipart/form-data">{% csrf_token %}
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                  <label class="custom-file-label" for="customFileLang"></label>
+                  <input type="file" name="document" class="custom-file-input" id="customFileLang" lang="en">
+                  <label class="custom-file-label" for="customFileLang">Click here to chose file</label>
+                  <label class="pt-3" for="">Please Chose file a pdf form</label>
+                  <div class="">
+                    <button type="submit" class="btn btn-primary my-4 col-lg-4">Submit</button>
+                  </div>
                 </div>
               </form>
             </div>

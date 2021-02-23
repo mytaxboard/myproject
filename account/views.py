@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm , Use
 from django.contrib.auth import authenticate, login as loginUser, logout
 from django.contrib import messages
 from . models import ManualForm16
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here.
 
  
@@ -90,7 +92,15 @@ def manual(request):
         return render(request,'manual.html')   
 
 def form16(request):
-    return render(request,'form16.html')   
+    if request.method=='POST':
+        uploadfile = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(uploadfile.name, uploadfile)
+        print(uploadfile.name)
+        print(uploadfile.size)
+        return HttpResponse('your form16 is uploaded !!!')
+    else:
+        return render(request,'form16.html')   
 
 
 
