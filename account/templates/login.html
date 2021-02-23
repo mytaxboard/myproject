@@ -40,7 +40,12 @@
                   </div>
                   <div class="card-body px-lg-5 py-lg-5">
                     <div class="text-center text-muted mb-4">
-                      <small>Or login with credentials</small>
+                      
+                      {% if error %}
+                      <small>{{error}}</small>  
+                      {% endif %}
+                        
+                      
                     </div>
                     <form role="form">
                       <div class="form-group mb-3">

@@ -47,6 +47,7 @@ def login(request):
         form = AuthenticationForm(data = request.POST)
         # print('form is not valid')
         if form.is_valid():
+            error_message = None
             username = request.POST.get('username')
             password = request.POST.get('password')
             user = authenticate(username=username, password=password)
@@ -57,11 +58,13 @@ def login(request):
                 print('login user ', loginUser)
                 return redirect('dashboard')
             else:
-                messages.error(request,'Envalid Username or Password !!')
+                error_message = 'Envalid Username or Password !!'
                 return render(request,'login.html')    
         else:
-            messages.error(request,'Envalid Username or Password !!')
-            context = {'form':form}
+            error_message = 'Envalid Username or Password !!'
+            context = {'form':form,
+                        'error':error_message,
+            }
             return render(request,'login.html', context=context)
 
 def profile(request, username):
@@ -96,8 +99,8 @@ def form16(request):
         uploadfile = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(uploadfile.name, uploadfile)
-        print(uploadfile.name)
-        print(uploadfile.size)
+        # print(uploadfile.name)
+        # print(uploadfile.size)
         return HttpResponse('your form16 is uploaded !!!')
     else:
         return render(request,'form16.html')   
