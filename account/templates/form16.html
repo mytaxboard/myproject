@@ -12,7 +12,7 @@
             </div>
             <!-- Card body -->
             <div class="card-body">
-              <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+              <form method="POST" enctype="multipart/form-data" accept-charset="utf-8" >{% csrf_token %}
                 <div class="custom-file">
                   <input type="file" name="document" class="custom-file-input" id="customFileLang" lang="en">
                   <label class="custom-file-label" for="customFileLang">Click here to chose file</label>

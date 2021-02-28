@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login as loginUser, logout
 from django.contrib import messages
 from . models import ManualForm16
 from django.core.files.storage import FileSystemStorage
+import PyPDF2
+from django.http import JsonResponse
+import json
+from django.core import serializers
+
 
 # Create your views here.
 
@@ -97,11 +102,35 @@ def manual(request):
 def form16(request):
     if request.method=='POST':
         uploadfile = request.FILES['document']
-        fs = FileSystemStorage()
-        fs.save(uploadfile.name, uploadfile)
+        # pdfdata = json.dumps(uploadfile)
+        # jsondata = uploadfile.read()
+        # pdfdata = json.loads(jsondata)
+        return JsonResponse(serializers.serialize('json',uploadfile,safe=False))
+        # pdfread = PyPDF2.PdfFileReader(uploadfile)
+        # print('===================')
+        # print('===================')
+        # x = pdfread.getPage(0)
+        # pdfdata = x.extractText()
+        # print(pdfdata)
+        # jsondata = json.dumps(pdfdata)
+        # jsonread = jsondata.read()
+        # obj = json.loads(jsonread)
+        # print('++++++++++++++++')
+        # print(str(obj['Employee']))
+
+
+        # data = {
+        #     'pdfdata': pdfdata,
+        # }
+        # page = (a.getNumPages())
+        # page1 = a.getPage(a)
+        # print(page1.extractText())
+        # print(a.extractText())
+        # fs = FileSystemStorage()
+        # fs.save(uploadfile.name, uploadfile)
         # print(uploadfile.name)
         # print(uploadfile.size)
-        return HttpResponse('your form16 is uploaded !!!')
+        # return render(request,'manual.html',{'pdfdata':json.dumps(pdfdata)})
     else:
         return render(request,'form16.html')   
 
