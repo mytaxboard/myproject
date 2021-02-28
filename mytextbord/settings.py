@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'mytaxboard',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': ['mytaxboard-app.herokuapp.com','localhost','*'],
         'PORT': '3306',
     }
 }
