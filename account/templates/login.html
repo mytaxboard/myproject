@@ -13,11 +13,11 @@
             <div class="card-header bg-white pb-2">
               <div class="text-muted text-center mb-1"><p class="font-weight-bolder">Log in</p></div>
               <div class="btn-wrapper text-center">
-                <a href="#" class="">
+                <a href="{% url 'social:begin' 'github' %}" class="">
                   <span class="btn-inner--icon"><img src="/static/img/icons/common/github.svg"></span>
                   <span class="btn-inner--text"></span>
                 </a>
-                <a href="#" class="">
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="">
                   <span class="btn-inner--icon"><img src="/static/img/icons/common/google.svg"></span>
                   <span class="btn-inner--text"></span>
                 </a>
