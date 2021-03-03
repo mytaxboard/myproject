@@ -164,8 +164,8 @@ SOCIAL_AUTH_GITHUB_SECRET = '3a969a3d4999d83dcbd9f9919d0b211a67f0dde1'
 
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '151859089385-1c9ks70t403ci978g8fmvmphjkaics5a.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'sZzwIXVsmtDjJZV-MpQDfsxq' 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '151859089385-2fqo060uuf0is951lps7n6hbqrdijj93.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'N5hKbxPzNzQNCmRb6YdjOIXN' 
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

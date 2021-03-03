@@ -11,7 +11,7 @@ urlpatterns = [
     path('registration', views.registration, name='registration'),
     path('manual', views.manual, name='manual'),
     path('form16', views.form16, name='form16'),
-    path('oauth/', include('social_django.urls', namespace='social')), 
+    path('', include('social_django.urls', namespace='social')), 
     path('<str:username>', views.profile, name='profile'),
 ]
 
