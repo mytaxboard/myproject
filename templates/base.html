@@ -76,21 +76,26 @@
             </a>
             
           </li>
-          <li class="nav-item">
-            <a href="{% url 'login' %}" >
-              <button type= "button" class="btn btn-info btn-round"> Log In </button>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a href="{% url 'logout' %}" >
+                  <button type= "button" class="btn btn-info btn-round"> Log Out </button>
+                </a>
+              </li>
+            {% else %}
+            <li class="nav-item">
+              <a href="{% url 'login' %}" >
+                <button type= "button" class="btn btn-info btn-round"> Log In </button>
+              </a>
+            </li> 
+            <li class="nav-item">
+              <a href="{% url 'signup' %}" >
+                <button type= "button" class="btn btn-info btn-round"> Sign Up </button>
+              </a>
+            </li>
+            {% endif %}
               
-            </a>
-          </li> 
-          <li class="nav-item">
-            
-            <a href="{% url 'signup' %}" >
-              <button type= "button" class="btn btn-info btn-round"> Sign Up </button>
-              
-            
-    
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
