@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import include, path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,6 +11,7 @@ urlpatterns = [
     path('registration', views.registration, name='registration'),
     path('manual', views.manual, name='manual'),
     path('form16', views.form16, name='form16'),
+    path('oauth/', include('social_django.urls', namespace='social')), 
     path('<str:username>', views.profile, name='profile'),
 ]
 
