@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login as loginUser, logout
 from django.contrib import messages
 from . models import ManualForm16
 from django.core.files.storage import FileSystemStorage
-import PyPDF2
+#import PyPDF2
 from django.http import JsonResponse
 import json
 from django.core import serializers
